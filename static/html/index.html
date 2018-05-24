@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+
+<div id="element1" class="hidden">
+</div>
+
+<div id="element2" class="hidden">
+</div>
+
+<div id="launch">
+   <button class ="button" id = "b1">Load page!</button>
+</div>
+
+<div id="exitbutton">
+   <button class ="button" id = "exit_stim">Exit stimulus and go to feedback.</button>
+</div>
+
+<button id="end-trial"></button>
+
+<script type="text/javascript">
+  var js = document.createElement("script");
+  js.type = "text/javascript";
+  js.src = jsPsych.currentTrial().data.js_url;
+  document.body.appendChild(js);
+</script>
+
+</body>
+
+</html>
