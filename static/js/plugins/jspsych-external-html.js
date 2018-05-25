@@ -43,6 +43,12 @@ jsPsych.plugins['external-html'] = (function() {
         pretty_name: 'Force refresh',
         default: false,
         description: 'Refresh page.'
+      },
+      executeScript: {
+        type: jsPsych.plugins.parameterType.BOOL,
+        pretty_name: 'Execute scripts',
+        default: false,
+        description: 'If true, executes scripts on the external html file.'
       }
     }
   }
@@ -66,6 +72,15 @@ jsPsych.plugins['external-html'] = (function() {
         display_element.innerHTML = '';
         jsPsych.finishTrial(trial_data);
       };
+
+      if (trial.executeScript) {
+        for (const scriptEl of display_element.getElementsByTagName("script")) {
+        const relocatedScript = document.createElement("script");
+        relocatedScript.text = scriptEl.text;
+        scriptEl.parentNode.replaceChild(relocatedScript, scriptEl);
+        }
+      }
+
       if (trial.cont_btn) { display_element.querySelector('#'+trial.cont_btn).addEventListener('click', finish); }
       if (trial.cont_key) {
         var key_listener = function(e) {
