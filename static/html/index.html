@@ -8,29 +8,26 @@
 </head>
 
 <body>
+  <div id="injected-content">
+    <div id = "active-game">
+      This is some text inside of active-game.
+      <!-- please put all content of the test page into this div -->
+      <div id="element1" class="hidden">
+        <img src="static/img/cartoon.jpg" />
+      </div>
 
-<div id = "active-game">
-  <!-- please put all content of the test page into this div -->
-  <div id="element1" class="hidden">
-    <img src="static/img/cartoon.jpg" />
+      <div id="element2" class="hidden">
+        <img src="static/img/blank.jpg" />
+        This is some text that gets styled.
+      </div>
+
+      <div id="launch">
+         <button class="jspsych-btn" id= "b1">Load page!</button>
+      </div>
+
+      <button id="end-trial">endtrail</button>
+    </div>
   </div>
-
-  <div id="element2" class="hidden">
-    <img src="static/img/blank.jpg" />
-    This is some text that gets styled.
-  </div>
-
-  <div id="launch">
-     <button class="jspsych-btn" id= "b1">Load page!</button>
-  </div>
-
-  <div id="exitbutton" class="hidden">
-     <button id="end-trial">endtrail</button>
-  </div>
-
-
-</div>
-
 
 <script type="text/javascript">
   var js = document.createElement("script");
