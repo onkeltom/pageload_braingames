@@ -1,3 +1,20 @@
+#active-game {
+    font-family: sans-serif;
+    background-color: #ffeecc;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* prevent text selection */
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
 #element1 {
   height: 300px;
   width: 300px;
@@ -8,6 +25,8 @@
   height: 300px;
   width: 300px;
   background-color: #0f0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hidden {
@@ -26,5 +45,4 @@
 }
 
 #end-trial {
-  display: none;
 }

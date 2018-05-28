@@ -35,7 +35,7 @@ var test_block = {
   url: "static/html/index.html",
   timeline: test_data,
   randomize_order: true,
-  cont_btn: "exit_stim",
+  cont_btn: "end-trial",
   executeScript: true
 };
 

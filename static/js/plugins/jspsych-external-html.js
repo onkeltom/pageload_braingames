@@ -48,7 +48,7 @@ jsPsych.plugins['external-html'] = (function() {
         type: jsPsych.plugins.parameterType.BOOL,
         pretty_name: 'Execute scripts',
         default: false,
-        description: 'If true, executes scripts on the external html file.'
+        description: 'If true, execute scripts on the external html file.'
       }
     }
   }
@@ -78,7 +78,7 @@ jsPsych.plugins['external-html'] = (function() {
         const relocatedScript = document.createElement("script");
         relocatedScript.text = scriptEl.text;
         scriptEl.parentNode.replaceChild(relocatedScript, scriptEl);
-        }
+        };
       }
 
       if (trial.cont_btn) { display_element.querySelector('#'+trial.cont_btn).addEventListener('click', finish); }
