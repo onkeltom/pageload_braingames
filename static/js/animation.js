@@ -6,7 +6,7 @@ var fakeload = function() {
      $('#element2').css({'display': 'block'});
      setTimeout(function() {
        $('#end-trial').click();
-     }, 400);
+     }, 2000);
    }, 400);
  }, 500);
 }

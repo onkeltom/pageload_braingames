@@ -1,5 +1,8 @@
 'use strict';
 
+// preload all image files in the test
+var images = ['static/img/blank.jpg', 'static/img/cartoon.jpg'];
+
 var evaluate = {
   type: "html-button-response",
   stimulus: "This will later be a page to collect user feedback.",
@@ -44,6 +47,7 @@ timeline.push(test_block)
 /* start the experiment */
 jsPsych.init({
       timeline: timeline,
+      preload_images: images,
       on_finish: function() {
         jsPsych.data.displayData();
       }
