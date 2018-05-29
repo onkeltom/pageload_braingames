@@ -8,8 +8,8 @@ var evaluate = {
 }
 
 var test_data = [
-    {data: {js_url: "static/js/animation.js"}, timeline: [{}, evaluate]},
-    {data: {js_url: "static/js/animation.js"}, timeline: [{}, evaluate]}
+    {data: {js_url: "static/js/anim.js"}, timeline: [{}, evaluate]},
+    {data: {js_url: "static/js/anim.js"}, timeline: [{}, evaluate]}
 ];
 
 var timeline = [];
