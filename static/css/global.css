@@ -29,6 +29,20 @@
   margin-right: auto;
 }
 
+#element3 {
+  height: 300px;
+  width: 300px;
+  background-color: #ff0;
+}
+
+#element4 {
+  height: 300px;
+  width: 300px;
+  background-color: #0ff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hidden {
   display: none;
 }
