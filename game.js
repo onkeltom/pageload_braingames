@@ -16,7 +16,8 @@ var evaluate = {
 // and link it to a js_url which will contain the specific animation for this content.
 var test_data = [
     { data: {js_url: "static/js/animation.js"}, timeline: [{url: "static/html/index.html"}, evaluate] },
-    { data: {js_url: "static/js/animation.js"}, timeline: [{url: "static/html/index.html"}, evaluate] }
+    { data: {js_url: "static/js/animation_longer.js"}, timeline: [{url: "static/html/index.html"}, evaluate] },
+    { data: {js_url: "static/js/animation_longfp.js"}, timeline: [{url: "static/html/index.html"}, evaluate] }
 ];
 
 var timeline = [];

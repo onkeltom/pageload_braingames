@@ -4,8 +4,8 @@
 // be used to close the trial and move on to the user rating task
 // ******
 
-var configuration = [{msg: "#element1", timeout: 2000},
-                    {msg: "#element2", timeout: 3000}
+var configuration = [{id: "#element1", timeout: 2000},
+                    {id: "#element2", timeout: 3000}
                     ];
 
 // promiseGenerator function will create a series of timeout events based on then
@@ -14,7 +14,7 @@ var configuration = [{msg: "#element1", timeout: 2000},
 function promiseGenerator({msg, timeout}) {
 	return new Promise((resolve, reject) => {
   	setTimeout(() => {
-			$(msg).css({'display': 'block'});
+			$(id).css({'display': 'block'});
       resolve();
     }, timeout)
   })

@@ -22,6 +22,24 @@ html {
 	font-size: 90%;
 }
 
+.hidden {
+    display: none;
+}
+.h1_hidden {
+    display: none;
+}
+.img_hidden {
+    display: none;
+}
+.p_hidden {
+    display: none;
+}
+.heading, .heading-blue {
+  display:none;
+}
+#sidebar_ads_content {
+}
+
 /*body {
   font-family: georgia,"times new roman",times,serif;
   font-size: 90%;

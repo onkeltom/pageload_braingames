@@ -5,9 +5,13 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 <body>
+  <div id="launch">
+     <button class="jspsych-btn" id= "b1">Load page!</button>
+  </div>
 <div id="clear-content">
+
 <!-- BEGIN TOP -->
-<div id="top">
+<div id="top" class ="hidden">
   <ul>
     <li><a href="#">About</a></li>
     <li><a href="#">Submit a Story</a></li>
@@ -18,12 +22,12 @@
 <!-- END TOP -->
 <!-- BEGIN HEADER -->
 <div id="header">
-  <div id="logo"> <a href="#"><img src="static/img/wireframe/logo.png" alt="" /></a> </div>
-  <div id="ad"> <img src="static/img/ad-blank.png" alt="" /> </div>
+  <div id="logo" class="hidden"> <a href="#"><img src="static/img/wireframe/logo.png" alt="" /></a> </div>
+  <div id="ad" class ="hidden"> <img src="static/img/ad-blank.png" alt="" /> </div>
 </div>
 <!-- END HEADER -->
 <!-- BEGIN NAV -->
-<div id="nav">
+<div id="nav" class ="hidden">
   <ul>
     <li><a href="#">Home</a></li>
     <li><a href="#">Archive</a></li>
@@ -38,7 +42,7 @@
 </div>
 <!-- END NAV -->
 <!-- BEGIN SUB NAV -->
-<div id="sub-nav">
+<div id="sub-nav" class ="hidden">
   <ul>
     <li class="title">Stay in the know:</li>
     <li><a href="#">Blogs</a></li>
@@ -52,48 +56,70 @@
 </div>
 <!-- END SUB NAV -->
 <!-- BEGIN CONTENT WRAPPER -->
-<div id="content-wrapper">
+<div id="content-wrapper" class="hidden">
+
   <!-- BEGIN MAIN -->
   <div id="main">
     <div id="headlines">
       <div id="main-headline">
-        <h2 class="heading">Featured Story</h2>
-        <img src="static/img/blank.jpg" alt="" />
-        <h1><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h1>
-        <p class="author">Name Here | <span>09.18.09</span></p>
-        <p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
-        <p><a href="#">Full story &raquo;</a></p>
-        <h2 class="heading">Latest Video</h2>
-        <object width="400" height="300">
-          <param name="movie" value="http://www.youtube.com/v/B0jhJA1Hjxk&amp;hl=en_US&amp;fs=1&" />
-          <param name="allowFullScreen" value="true" />
-          <param name="allowscriptaccess" value="never" />
-          <embed src="http://www.youtube.com/v/B0jhJA1Hjxk&amp;hl=en_US&fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="never" allowfullscreen="true" width="400" height="300"></embed>
-        </object>
-        <h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
-        <p class="author"><span>09.18.09</span></p>
-        <p><a href="#">More video &raquo;</a></p>
+        <div id="featured">
+			<h2 id="featured_header" class="heading">Featured Story</h2>
+        	<img src="static/img/blank.jpg" alt="" id="hl_img" class="img_hidden" />
+        	<h1 id="featured_h1" class="h1_hidden"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h1>
+        	<div id="featured_text" class="p_hidden">
+				<p class="author">Name Here | <span>09.18.09</span></p>
+        		<p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
+        		<p><a href="#">Full story &raquo;</a></p>
+			</div>
+		</div>
+		<div id="latest_video">
+			<h2 class="heading">Latest Video</h2>
+			<div id="video_content" class="hidden">
+				<object width="400" height="300">
+					<param name="movie" value="http://www.youtube.com/embed/B0jhJA1Hjxk?hl=en_US&fs=1&" />
+					<param name="allowFullScreen" value="true" />
+					<param name="allowscriptaccess" value="never" />
+					<embed src="http://www.youtube.com/embed/B0jhJA1Hjxk?hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="never" allowfullscreen="true" width="400" height="300"></embed>
+				</object>
+			</div>
+       		<h2 id="video_h2" class="h1_hidden"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
+        	<div id="video_text" class="p_hidden">
+				<p class="author"><span>09.18.09</span></p>
+        		<p><a href="#">More video &raquo;</a></p>
+			</div>
+		</div>
       </div>
+
       <div id="more-headlines">
         <h2 class="heading">Featured Stories</h2>
-        <h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
-        <p class="author">Name Here | <span>09.18.09</span></p>
-        <p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
-        <p><a href="#">Full article &raquo;</a></p>
-        <h3><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-        <p class="author">Name Here | <span>09.18.09</span></p>
-        <p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
-        <p><a href="#">Full article &raquo;</a></p>
-        <h3><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-        <p class="author">Name Here | <span>09.18.09</span></p>
-        <p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
-        <p><a href="#">Full article &raquo;</a></p>
-        <h2 class="heading">Podcast</h2>
-        <img src="static/img/microphone.png" alt="" class="righty" />
-        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-        <p class="author"><span>09.18.09</span></p>
-        <p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
-        <p><a href="#">More podcasts &raquo;</a></p>
+		<h2 class="h1_hidden"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h2>
+		<div class="p_hidden">
+        	<p class="author">Name Here | <span>09.18.09</span></p>
+        	<p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
+        	<p><a href="#">Full article &raquo;</a></p>
+		</div>
+		<h3 class="h1_hidden"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
+		<div class="p_hidden">
+        	<p class="author">Name Here | <span>09.18.09</span></p>
+        	<p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
+        	<p><a href="#">Full article &raquo;</a></p>
+		</div>
+		<h3 class="h1_hidden"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
+        <div class="p_hidden">
+			<p class="author">Name Here | <span>09.18.09</span></p>
+        	<p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
+        	<p><a href="#">Full article &raquo;</a></p>
+		</div>
+		<h2 class="heading">Podcast</h2>
+        <h4 class="h1_hidden"><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+		<div class="img_hidden">
+			<img src="static/img/microphone.png" alt="" class="righty" />
+		</div>
+		<div class="p_hidden">
+        	<p class="author"><span>09.18.09</span></p>
+        	<p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
+        	<p><a href="#">More podcasts &raquo;</a></p>
+		</div>
       </div>
     </div>
   </div>
@@ -101,43 +127,40 @@
   <!-- BEGIN SIDEBARS -->
   <div id="sidebars">
     <!-- BEGIN ADS -->
-    <a href="#"><img src="static/img/side-ad.png" alt="" class="ad" /></a> <a href="#"><img src="static/img/side-ad.png" alt="" class="ad-right" /></a> <a href="#"><img src="static/img/side-ad.png" alt="" class="ad" /></a> <a href="#"><img src="static/img/side-ad.png" alt="" class="ad-right" /></a>
+	<div id="sidebar_ads" class="hidden">
+		<div id="sidebar_ads_content">
+    		<a href="#"><img src="static/img/side-ad.png" alt="" class="ad" /></a> <a href="#"><img src="static/img/side-ad.png" alt="" class="ad-right" /></a> <a href="#"><img src="static/img/side-ad.png" alt="" class="ad" /></a>
+        <a href="#"><img src="static/img/side-ad.png" alt="" class="ad-right" /></a>
+		</div>
+	</div>
     <!-- END ADS -->
     <h2 class="heading-blue">Sports Headlines</h2>
-    <img src="static/img/wayne.jpg" alt="" />
-    <h3><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
-    <p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
-    <p><a href="#">More headlines &raquo;</a></p>
+    <div id="img_sports" class="img_hidden">
+		<img src="static/img/wayne.jpg" alt="" />
+	</div>
+    <div id="sports_h3" class="h1_hidden">
+		<h3><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
+	</div>
+    <div id="sports_text" class="p_hidden">
+		<p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
+    	<p><a href="#">More headlines &raquo;</a></p>
+	</div>
     <h2 class="heading">Celebrity Sightings</h2>
-    <img src="static/img/casey.jpg" alt="" class="ad" /> <img src="static/img/hobo.jpg" alt="" class="ad-right" />
+    <div id="celebrity_img" class="img_hidden">
+		<img src="static/img/casey.jpg" alt="" class="ad" /> <img src="static/img/hobo.jpg" alt="" class="ad-right" />
+	</div>
     <h2 class="heading">In the Community</h2>
-    <h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
-    <h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
+    <div id="community" class="p_hidden">
+		<h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
+    	<h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
+	</div>
   </div>
   <!-- END SIDEBARS -->
 </div>
 <!-- END CONTENT WRAPPER-->
-<!-- BEGIN EXTRAS -->
-<div id="extras">
-  <div id="recommended">
-    <h2 class="heading">Recommended Stories</h2>
-    <ul>
-      <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
-      <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
-      <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
-      <li class="last"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
-    </ul>
-  </div>
-  <div id="programs">
-    <h2 class="heading">What's On Tonight</h2>
-    <img src="static/img/rick.jpg" alt="" /> <img src="static/img/cbc.png" alt="" /> </div>
-  <div id="cartoon">
-    <h2 class="heading">Humour</h2>
-    <img src="static/img/cartoon.jpg" alt="" /> </div>
-</div>
-<!-- END EXTRAS -->
+
 <!-- BEGIN FOOTER -->
-<div id="footer">
+<div id="footer" class="hidden">
   <ul>
     <li>&copy;2010 <a href="#">Name Here</a></li>
     <li>|</li>
@@ -154,7 +177,17 @@
     <li>Designed by <a href="http://www.skyrocketlabs.com/">Skyrocket Labs</a></li>
   </ul>
 </div>
-</div>
 <!-- END FOOTER -->
+
+<button id="end-trial" class = "hidden">endtrail</button>
+
 </body>
+
+<script type="text/javascript">
+  var js = document.createElement("script");
+  js.type = "text/javascript";
+  js.src = jsPsych.currentTrial().data.js_url;
+  document.body.appendChild(js);
+</script>
+
 </html>
