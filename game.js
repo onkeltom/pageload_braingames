@@ -15,8 +15,8 @@ var evaluate = {
 // Each line is one stimulus for which one will select the url in the timeline for content to be shown
 // and link it to a js_url which will contain the specific animation for this content.
 var test_data = [
-    { data: {js_url: "static/js/anim.js"}, timeline: [{url: "static/html/stim2.html"}, evaluate] },
-    { data: {js_url: "static/js/anim2.js"}, timeline: [{url: "static/html/stim2.html"}, evaluate] }
+    { data: {js_url: "static/js/animation.js"}, timeline: [{url: "static/html/index.html"}, evaluate] },
+    { data: {js_url: "static/js/animation.js"}, timeline: [{url: "static/html/index.html"}, evaluate] }
 ];
 
 var timeline = [];
