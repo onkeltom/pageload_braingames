@@ -10,9 +10,13 @@ var evaluate = {
 	prompt: "<p>Please click button to load the next stimulus.</p>"
 }
 
+
+// This variable is where you will define the test_data
+// Each line is one stimulus for which one will select the url in the timeline for content to be shown
+// and link it to a js_url which will contain the specific animation for this content.
 var test_data = [
-    {data: {js_url: "static/js/animation.js"}, timeline: [{}, evaluate]},
-    {data: {js_url: "static/js/animation.js"}, timeline: [{}, evaluate]}
+    { data: {js_url: "static/js/anim.js"}, timeline: [{url: "static/html/stim2.html"}, evaluate] },
+    { data: {js_url: "static/js/anim2.js"}, timeline: [{url: "static/html/stim2.html"}, evaluate] }
 ];
 
 var timeline = [];
@@ -35,9 +39,9 @@ timeline.push(launch)
 /* define test block */
 var test_block = {
   type: "external-html",
-  url: "static/html/index.html",
   timeline: test_data,
   randomize_order: true,
+  repetitions: 2,
   cont_btn: "end-trial",
   executeScript: true
 };
