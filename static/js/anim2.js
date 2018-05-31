@@ -1,9 +1,16 @@
-var args = [
-    { args : "#element2", delay: 2000},
-    { args : "#element1", delay : 3500  },
-    // { arg : "#end-trial", delay : 4000}
-];
+// ******
+// Please define your load animation in the configuration variable.
+// Note that each page needs to have a (hidden) button called #end-trial that will
+// be used to close the trial and move on to the user rating task
+// ******
 
+var configuration = [{msg: "#element1", timeout: 2000},
+                    {msg: "#element2", timeout: 3000}
+                    ];
+
+// promiseGenerator function will create a series of timeout events based on then
+// configuration variable and execute them.
+// Using promises here makes sure that we keep the presentation order
 function promiseGenerator({msg, timeout}) {
 	return new Promise((resolve, reject) => {
   	setTimeout(() => {
@@ -13,11 +20,9 @@ function promiseGenerator({msg, timeout}) {
   })
 }
 
-var promises = [{msg: "#element1", timeout: 2000}, {msg: "#element2", timeout: 3000}];
-
 $('#b1').on('click', function() {
   $('#launch').addClass('hidden');
-  Promise.all(promises.map(promiseGenerator)).then(() => {
+  Promise.all(configuration.map(promiseGenerator)).then(() => {
     setTimeout(function(){
         $('#end-trial').click()
     }, 1000);
