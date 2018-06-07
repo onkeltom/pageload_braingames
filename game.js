@@ -1,7 +1,7 @@
 'use strict';
 
 // preload all image files in the test
-var images = ['static/img/blank.jpg', 'static/img/cartoon.jpg'];
+// var images = ['static/img/blank.jpg', 'static/img/cartoon.jpg'];
 
 // var evaluate = {
 //   type: "html-button-response",
@@ -35,7 +35,7 @@ var test_data = [
     // { data: {js_url: "static/js/animation.js" }, timeline: [{url: "static/html/index.html"}, evaluate] },
     // { data: {js_url: "static/js/animation_longer.js" }, timeline: [{url: "static/html/index.html"}, evaluate] },
     // { data: {js_url: "static/js/animation_longfp.js" }, timeline: [{url: "static/html/index.html"}, evaluate] }
-    { data: {js_url: "static/js/agency_animation.js" }, timeline: [{url: "static/html/agency.html"}, evaluate] },
+    { data: {js_url: "static/js/agency_animation.js" }, timeline: [{url: "static/html/agency_grid.html"}, evaluate] },
 ];
 
 
@@ -71,7 +71,7 @@ timeline.push(test_block)
 /* start the experiment */
 jsPsych.init({
       timeline: timeline,
-      preload_images: images,
+      // preload_images: images,
       on_finish: function() {
         jsPsych.data.displayData();
       }

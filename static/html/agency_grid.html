@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="launch">
+     <button class="jspsych-btn" id= "b1">Load page!</button>
+  </div>
+
+  <div class="debug">
+    debug window
+  </div>
+
+<div class="clear_content">
+<div class="test">
+  <div class="container">
+
+    <div class="left_header">
+      <img class="object-fit_cover" src="static/img/logo.png">
+    </div>
+
+    <div class="right_header">
+      11.22.33.44.55<br>info@foo.com
+    </div>
+
+    <div class="left_title">
+      Modern, Minimal & Inspiring.
+    </div>
+
+    <div class="right_title">
+      FREE Bootstrap v3.3.5 frame work base minimal portfolio template for presonal use and creative agency.
+    </div>
+
+    <div class="spacer">
+
+    </div>
+
+    <div class="img1">
+      <img class="object-fit_cover" src="static/img/work-1.jpg">
+    </div>
+
+    <div class="img2">
+      <img class="object-fit_cover" src="static/img/work-2.jpg">
+    </div>
+
+    <div class="img3">
+      <img class="object-fit_cover" src="static/img/work-3.jpg">
+    </div>
+
+    <div class="img4">
+      <img class="object-fit_cover" src="static/img/work-4.jpg">
+    </div>
+
+
+    <div class="about">
+      <p class="experts">WE'RE EXPERT TO CREATE BEAUTIFUL DESIGN & SMART TECHNOLOGY</p>
+      Nullam at enim mauris. Donec et nunc ipsum. Suspendi tempus fringilla ipsu Cras metus euismod velit gravida at nunc ipsum.
+    </div>
+
+    <div class="worklist">
+      <div class="work_container">
+        <div class="work1">
+          <img class="object-fit_scale-down smallimg" src="static/img/web.png">
+          WEB & MOBILE
+        </div>
+        <div class="work2">
+          <img class="object-fit_scale-down smallimg" src="static/img/branding.png">
+          BRANDING
+        </div>
+        <div class="work3">
+          <img class="object-fit_scale-down smallimg" src="static/img/marketing.png">
+          DIGITAL MARKETING
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer_left">
+    LET'S WORK TOGETHER
+    <p> Call: 11.22.33.44.55 OR<br>Email : mailto:hello@agency.com
+  </div>
+</div>
+
+</div>
+
+<button id="end-trial">endtrail</button>
+
+</body>
+
+<!-- //include the loading script from game.js configuration -->
+<script type="text/javascript">
+  var js = document.createElement("script");
+  js.type = "text/javascript";
+  js.src = jsPsych.currentTrial().data.js_url;
+  document.body.appendChild(js);
+</script>
+
+</html>
