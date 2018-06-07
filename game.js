@@ -36,6 +36,7 @@ var test_data = [
     // { data: {js_url: "static/js/animation_longer.js" }, timeline: [{url: "static/html/index.html"}, evaluate] },
     // { data: {js_url: "static/js/animation_longfp.js" }, timeline: [{url: "static/html/index.html"}, evaluate] }
     { data: {js_url: "static/js/agency_animation.js" }, timeline: [{url: "static/html/agency_grid.html"}, evaluate] },
+    { data: {js_url: "static/js/agency_animation_faster.js" }, timeline: [{url: "static/html/agency_grid.html"}, evaluate] },
 ];
 
 
