@@ -4,19 +4,24 @@
 // be used to close the trial and move on to the user rating task
 // ******
 
-var configuration = [ { id: '.footer', timeout: 300},
-                      { id: '.test', timeout: 400},
+var configuration = [ { id: '.test', timeout: 400},
                       { id: '.left_header', timeout: 500},
                       { id: '.right_header', timeout: 600},
                       { id: '.spacer', timeout: 600},
+                      { id: '.footer', timeout: 700},
                       { id: '.left_title', timeout: 800},
                       { id: '.right_title', timeout: 800},
-                      { id: '.worklist', timeout: 1000},
-                      { id: '.about', timeout: 1000},
+                      { id: '.text1', timeout: 950},
+                      { id: '.text2', timeout: 950},
+                      { id: '.text3', timeout: 950},
+                      { id: '.worklist', timeout: 1100},
+                      { id: '.about', timeout: 1100},
                       { id: '.img1', timeout: 1300},
                       { id: '.img2', timeout: 1600},
                       { id: '.img3', timeout: 2000},
-                      { id: '.img4', timeout: 2000}
+                      { id: '.img4', timeout: 2000},
+                      { id: '.img5', timeout: 2100},
+                      { id: '.img6', timeout: 2400}
                     ];
 
 // promiseGenerator function will create a series of timeout events based on then
