@@ -58,6 +58,7 @@
 }
 
 .footer {
+  align-items: left;
   visibility: hidden;
   font-family: "Courier New", Courier, serif;
   display: grid;

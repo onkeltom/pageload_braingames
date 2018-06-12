@@ -1,7 +1,10 @@
 'use strict';
 
 // preload all image files in the test
-// var images = ['static/img/blank.jpg', 'static/img/cartoon.jpg'];
+ var images = ['static/img/work-1.jpg', 'static/img/work-2.jpg',
+               'static/img/work-3.jpg', 'static/img/work-4.jpg',
+               'static/img/watch.jpg', 'static/img/shoes.jpg',
+             ];
 
 // var evaluate = {
 //   type: "html-button-response",
@@ -72,7 +75,7 @@ timeline.push(test_block)
 /* start the experiment */
 jsPsych.init({
       timeline: timeline,
-      // preload_images: images,
+      preload_images: images,
       on_finish: function() {
         jsPsych.data.displayData();
       }
