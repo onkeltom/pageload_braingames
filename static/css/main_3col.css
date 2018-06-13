@@ -14,6 +14,14 @@
   visibility:hidden;
 }
 
+.head > div {
+  visibility:hidden;
+}
+
+.footer > div {
+  visibility:hidden;
+}
+
 .debug {
   display:none;
   background: #000;
@@ -38,8 +46,8 @@
       " . work1 work2 work3 "
 }
 
-.container {
-  align-items: center;
+.head {
+  visibility: hidden;
   font-family: "Courier New", Courier, serif;
   display: grid;
   /* grid-template-rows: 30px 100px 120px 40px 377px 377px 250 1fr; */
@@ -50,6 +58,20 @@
       ". header_l header_l header_r . "
       ". title_l title_l title_r . "
       ". spacer spacer spacer ."
+}
+
+.container {
+  align-items: center;
+  font-family: "Courier New", Courier, serif;
+  display: grid;
+  /* grid-template-rows: 30px 100px 120px 40px 377px 377px 250 1fr; */
+  grid-template-columns: auto 350px 350px 350px auto;
+  grid-gap: 20px 20px;
+  grid-template-areas:
+      /* ". blank blank blank . "
+      ". header_l header_l header_r . "
+      ". title_l title_l title_r . "
+      ". spacer spacer spacer ." */
       ". text1 image1  image2 ."
       ". image3 image4 text2  ."
       ". image5 text3 image6 ."
@@ -79,6 +101,7 @@
 .spacer {
   grid-area: spacer;
   border-top: 1px solid #eee;
+  height: 50px
 }
 
 .text1 {
