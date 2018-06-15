@@ -84,6 +84,29 @@ var welcome = {
 
 timeline.push(welcome);
 
+// show the participant an example of how the rating slider will look like
+// we actually use a trial of the real evaluate page with additional explanations
+// this creates an interactive page so that the user can actually move the slider
+
+var evaluate_intro = {
+    type: 'html-slider-response',
+    stimulus: '<p>How fast did you experience the last page to load?</p>',
+    labels: ['slowest experience', 'fastest experience'],
+    prompt: "<p> This is the scale that is used to evaluate the loading.</p><p>another paragraph</p>",
+    min: 0,
+    max: 10,
+    // initialize the slider scale to a random position at each trial
+    on_start: function(trial){
+      trial.start = Math.floor(Math.random() * 11);
+    },
+    // This adds the current random scale init to data as well as the stimulus that was scored here
+    on_finish: function(data){
+      data.scale_init = jsPsych.currentTrial().start;
+    }
+};
+
+timeline.push(evaluate_intro)
+
 // after introduction, launch a training and anchoring to familiarize participants
 // with the range of perceivable differences between stimuli and make them practice
 // the rating after each trial
