@@ -51,7 +51,7 @@ function promiseGenerator({id, timeout}) {
         $(id).css({'visibility': 'visible'});
       };
       resolve();
-    }, timeout + (timeout * 0.2 * randn_bm()));
+    }, timeout + (timeout * 0.1 * randn_bm()));
   })
 }
 // promiseGenerator function will create a series of timeout events based on then
