@@ -218,3 +218,10 @@ img[class] {
 h4 {
   font-size: 19px
 }
+
+#screenshot {
+  width:auto; /* you can use % */
+  height: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px
+}

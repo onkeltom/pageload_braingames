@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 // preload all image files in the test
  var images = ['static/img/bag.jpg', 'static/img/branding.png',
                'static/img/decor.jpg', 'static/img/lens.jpg',
@@ -74,15 +76,55 @@ var timeline = [];
 // create as a variable and push it to timeline
 var welcome = {
   type: 'instructions',
-  pages: [
-      'Welcome to the experiment. Click next to begin.',
-      'This is the second page of instructions.',
-      'First, let us start with a little training.'
+    pages: [   // "<p></p>",
+      "<h3>Thank you for your participation in this \"BrainGame\"</h3>" +
+      "<p>BrainGames use research techniques from cognitive science<br>to better understand how our minds work when using the web</p>" +
+      "<p>That understanding can improve web experiences by<br>tailoring them around data contributed through your participation</p>" +
+      "<p>Left and right arrow keys navigate<br>back and forward through the instructions</p>",
+
+      "<p><strong>Please do NOT do any of the following things,<br>or you will be disqualified to prevent invalidating results:</strong></p>" +
+      "<ul><li>Hit ESC to exit fullscreen mode</li><li>Switch tabs or programs during the procedure</li><li>Zoom in or out</li><li>Reload the page once you have begun trials</li></ul>" +
+      "<p>You will be taken out of fullscreen mode after completing the study</p>",
+
+      "<p>On each trial of this experiment<br>you will load the same website under different conditions.<br>The website looks like this:</p>" + "<img id ='screenshot' src='static/img/website.png'></img>" +
+      "<p>Depending on your screen size, the website may look a bit different in your browser.<br>In some cases, you will not be able to see all elements at once on your screen.</p>",
+
+      "<p>During the test, there are a total of "+test_data.length*2+" trials to capture enough data for us to draw conclusions.<br></p>" +
+      "<p>To familiarize yourself with the test, we will do a training session and present you with the maximum differences between conditions.<br>" +
+      "You will also be able to practice the rating task that we will explain next.<br>" +
+      "Correct trials earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without making mistakes</p>" +
+      "<p>The training sessions begins beyond this final instruction screen, you will not be able to go backward from here</p>"
   ],
-  show_clickable_nav: true
+  // show_clickable_nav: true
 };
 
 timeline.push(welcome);
+
+var training_pt1 = {
+  type: 'instructions',
+    pages: [   // "<p></p>",
+      "<h3>Thank you for your participation in this \"BrainGame\"</h3>" +
+      "<p>BrainGames use research techniques from cognitive science<br>to better understand how our minds work when using the web</p>" +
+      "<p>That understanding can improve web experiences by<br>tailoring them around data contributed through your participation</p>" +
+      "<p>Left and right arrow keys navigate<br>back and forward through the instructions</p>",
+
+      "<p><strong>Please do NOT do any of the following things,<br>or you will be disqualified to prevent invalidating results:</strong></p>" +
+      "<ul><li>Hit ESC to exit fullscreen mode</li><li>Switch tabs or programs during the procedure</li><li>Zoom in or out</li><li>Reload the page once you have begun trials</li></ul>" +
+      "<p>You will be taken out of fullscreen mode after completing the study</p>",
+
+      "<p>On each trial of this experiment<br>you will load the same website under different conditions.<br>The website looks like this:</p>" + "<img id ='screenshot' src='static/img/website.png'></img>" +
+      "<p>Depending on your screen size, the website may look a bit different in your browser.<br>In some cases, you will not be able to see all elements at once on your screen.</p>",
+
+      "<p>During the test, there are a total of "+test_data.length*2+" trials to capture enough data for us to draw conclusions.<br></p>" +
+      "<p>To familiarize yourself with the test, we will do a training session and present you with the maximum differences between conditions.<br>" +
+      "You will also be able to practice the rating task that we will explain next.<br>" +
+      "Correct trials earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without making mistakes</p>" +
+      "<p>The training sessions begins beyond this final instruction screen, you will not be able to go backward from here</p>"
+  ],
+  // show_clickable_nav: true
+};
+
+timeline.push(training_pt1);
 
 // show the participant an example of how the rating slider will look like
 // we actually use a trial of the real evaluate page with additional explanations
