@@ -28,13 +28,13 @@ var configuration = [
                     ];
 
 
-// generate normal distribution scaling factor function
-function randn_bm() {
-    var u = 0, v = 0;
-    while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
-    while(v === 0) v = Math.random();
-    return Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
-}
+// // generate normal distribution scaling factor function
+// function randn_bm() {
+//     var u = 0, v = 0;
+//     while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+//     while(v === 0) v = Math.random();
+//     return Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+// }
 
 // promiseGenerator function will create a series of timeout events based on then
 // configuration variable and execute them.
@@ -51,7 +51,7 @@ function promiseGenerator({id, timeout}) {
         $(id).css({'visibility': 'visible'});
       };
       resolve();
-    }, timeout + (timeout * 0.1 * randn_bm()));
+    }, timeout + (timeout * randn_bm()));
   })
 }
 // promiseGenerator function will create a series of timeout events based on then
