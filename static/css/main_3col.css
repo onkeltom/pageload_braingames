@@ -220,8 +220,15 @@ h4 {
 }
 
 #screenshot {
-  width:auto; /* you can use % */
+  width:auto;
   height: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+#slider {
+  width: 40%;
+  height: auto;
   padding-top: 20px;
   padding-bottom: 20px
 }
