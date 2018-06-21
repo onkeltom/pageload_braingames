@@ -29,7 +29,7 @@ var configuration = [
 
 
 $('#b1').on('click', function() {
-  $('#launch').addClass('hidden');
+  $('#launch').addClass('display_toggle');
 
   if (jsPsych.data.getURLVariable('debug') === 'true') {
     $('.debug').css({'display': 'block'});

@@ -13,7 +13,13 @@
 <body>
 
   <div id="launch">
-     <button class="jspsych-btn" id= "b1">Load page!</button>
+     <div id="currentscore">
+       <p>You've earned another <span></span> points.</p>
+     </div>
+     <div id="total_current_score">
+       <p>Your total score is now <span></span> points.</p>
+     </div>
+     <button class="jspsych-btn" id= "b1">Load next page!</button>
   </div>
 
   <div class="debug">
@@ -137,6 +143,16 @@
   js.type = "text/javascript";
   js.src = jsPsych.currentTrial().data.js_url;
   document.body.appendChild(js);
+</script>
+
+<script type="text/javascript">
+  if (total_score === 0) {
+    $('#currentscore span').text('0');
+    $('#total_current_score span').text(total_score);
+  } else {
+    $('#currentscore span').text(5000 - jsPsych.data.get().last(1).values()[0].rt);
+    $('#total_current_score span').text(total_score);
+  }
 </script>
 
 </html>

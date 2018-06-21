@@ -32,7 +32,7 @@ var total_score = 0
      on_finish: function(data){
        data.scale_init = jsPsych.currentTrial().start;
        total_score = total_score + (5000 - jsPsych.data.get().last(1).values()[0].rt);
-       // console.log(total_score);
+       console.log(total_score);
      }
  };
 
@@ -118,9 +118,6 @@ var training_pt1 = {
       "<p>Please respond as quickly as possible.<br>You will have up to 5 seconds, but faster responses earn more points." +
       "You will earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without becoming inconsistent.</p>" +
       "<p>The training begins beyond this final instruction screen, you will not be able to go backward from here.</p>"
-
-
-
   ],
   // show_clickable_nav: true
 };
@@ -146,9 +143,19 @@ timeline.push(training_block)
 var before_test_starts = {
   type: 'instructions',
   pages: [
-      'Welcome to the experiment. Click next to begin.',
+      '<p>This is the end of the training.</p>' +
+      '<p>For your information, during the training, you received a total score of <span id=score></span> out of ' + training_data.length * 5000 + ' points.</p>' +
+      '<p>During the test, you will now see ' +test_data.length*2+ ' page loads that you will have to rate similar to the training.</p>' +
+      'The study begins beyond this final screen, you will not be able to go backward from here.',
   ],
-  show_clickable_nav: true
+  show_clickable_nav: true,
+  on_load: function(){
+    $('#score').text(total_score);
+  },
+  on_finish: function(data){
+    total_score = 0;
+    console.log(total_score);
+  }
 };
 
 timeline.push(before_test_starts)

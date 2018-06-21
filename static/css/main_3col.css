@@ -32,6 +32,10 @@
   visibility: hidden;
 }
 
+.display_toggle {
+  display: none;
+}
+
 .object-fit_fill { object-fit: fill }
 .object-fit_contain { object-fit: contain }
 .object-fit_cover { object-fit: cover }
