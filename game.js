@@ -154,7 +154,6 @@ var before_test_starts = {
   },
   on_finish: function(data){
     total_score = 0;
-    console.log(total_score);
   }
 };
 
@@ -173,6 +172,27 @@ var test_block = {
 };
 
 timeline.push(test_block)
+
+// study debrief
+
+var debrief_block = {
+  type: "html-keyboard-response",
+  stimulus: function() {
+
+    return "<p>Thank you very much for participating." +
+    "<br>You scored a total of <span id=totalscore></span> points during the test.</p>" +
+    "<p>That's a fantastic score.<br>Congratulation!</p>" +
+    "<p>Press any key to complete the experiment.</p>"+
+    "<p>Thank you!</p>"
+
+  },
+  on_load: function(){
+    $('#totalscore').text(total_score);
+  },
+};
+
+timeline.push(debrief_block)
+
 
 // this is jsPsych init function to start the test.
 jsPsych.init({
