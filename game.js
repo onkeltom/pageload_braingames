@@ -180,10 +180,12 @@ var debrief_block = {
   stimulus: function() {
 
     return "<p>Thank you very much for participating." +
-    "<br>You scored a total of <span id=totalscore></span> points during the test.</p>" +
-    "<p>That's a fantastic score.<br>Congratulation!</p>" +
-    "<p>Press any key to complete the experiment.</p>"+
-    "<p>Thank you!</p>"
+    "<br>You scored a total of <span id=totalscore></span> points during the test." +
+    "<br>That's a fantastic score.<br>Congratulation!</p>" +
+    "<p>The goal of this test is to better understand what makes pages load fast for our users." +
+    "With the results, we will be able to great an ever faster experience for Firefox Quantum." +
+    "Thank you for contributing!</p>" +
+    "<p>Press any key to complete the experiment.</p>"
 
   },
   on_load: function(){
