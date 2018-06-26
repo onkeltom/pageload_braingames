@@ -41,32 +41,23 @@ var total_score = 0
 // and link it to a js_url which will contain the specific animation for this content.
 
 var training_data = [
-  { data: {js_url: "static/js/agency_270_443.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_270_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_270_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_270_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_600_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_600_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_600_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1200_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_1200_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_3400_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_5000_v1.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 ];
 
 // similar to the training data, create an array that holds all trials under test
 // each trial consists of a nexted timeline of the test site followed by assessment task
 
 var test_data = [
-    { data: {js_url: "static/js/agency_270_443.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_270_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_270_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_270_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_600_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_600_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_600_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_1200_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_1200_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-    { data: {js_url: "static/js/agency_3400_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_270_443.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_270_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_270_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_270_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_600_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_600_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_600_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_1200_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_1200_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+    // { data: {js_url: "static/js/agency_3400_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 ];
 
 // create a shuffled array from test_data including randomized order and repetition
@@ -102,7 +93,7 @@ var welcome = {
   // show_clickable_nav: true
 };
 
-timeline.push(welcome);
+// timeline.push(welcome);
 
 var training_pt1 = {
   type: 'instructions',
@@ -122,7 +113,7 @@ var training_pt1 = {
   // show_clickable_nav: true
 };
 
-timeline.push(training_pt1);
+// timeline.push(training_pt1);
 
 // after introduction, launch a training and anchoring to familiarize participants
 // with the range of perceivable differences between stimuli and make them practice
@@ -135,7 +126,7 @@ var training_block ={
   executeScript: true,
 }
 
-timeline.push(training_block)
+// timeline.push(training_block)
 
 // Again, repeat the goal of the study and then tell the participant what to expect
 // during the actual test
@@ -157,7 +148,7 @@ var before_test_starts = {
   }
 };
 
-timeline.push(before_test_starts)
+// timeline.push(before_test_starts)
 
 // define the test block using the shuffled set of test stimuli and (potentially) repetition
 // push it to timeline
@@ -191,7 +182,7 @@ var debrief_block = {
   },
 };
 
-timeline.push(debrief_block)
+// timeline.push(debrief_block)
 
 
 // this is jsPsych init function to start the test.
