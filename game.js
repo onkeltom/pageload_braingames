@@ -24,15 +24,16 @@ var total_score = 0
      // prompt: "<p> refers to the slowest loading and <emph>10</emph> to the fastest loading experience.</p>",
      min: 0,
      max: 10,
+     start: 5,
      // initialize the slider scale to a random position at each trial
      on_start: function(trial){
-       trial.start = Math.floor(Math.random() * 11);
+       // trial.start = Math.floor(Math.random() * 11);
      },
      // This adds the current random scale init to data as well as the stimulus that was scored here
      on_finish: function(data){
        data.scale_init = jsPsych.currentTrial().start;
        total_score = total_score + (5000 - jsPsych.data.get().last(1).values()[0].rt);
-       console.log(total_score);
+       // console.log(total_score);
      }
  };
 
@@ -96,10 +97,11 @@ var welcome = {
       "<p>During the test, there are a total of "+test_data.length*2+" trials to capture enough data for us to draw conclusions.<br></p>" +
       "<p>To familiarize yourself with the test, we will do a training session and present you with the maximum differences between conditions.<br>" +
       "You will also be able to practice the rating task that we will explain next.<br>" +
-      "Correct trials earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without making mistakes</p>" +
+      // "Correct trials earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without making mistakes</p>" +
       "<p>The training sessions begins beyond this final instruction screen, you will not be able to go backward from here</p>"
   ],
-  // show_clickable_nav: true
+  show_clickable_nav: true,
+  allow_keys: false
 };
 
 timeline.push(welcome);
@@ -119,7 +121,8 @@ var training_pt1 = {
       "You will earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without becoming inconsistent.</p>" +
       "<p>The training begins beyond this final instruction screen, you will not be able to go backward from here.</p>"
   ],
-  // show_clickable_nav: true
+  show_clickable_nav: true,
+  allow_keys: false
 };
 
 timeline.push(training_pt1);
@@ -144,13 +147,14 @@ var before_test_starts = {
   type: 'instructions',
   pages: [
       '<p>This is the end of the training.</p>' +
-      '<p>For your information, during the training, you received a total score of <span id=score></span> out of ' + training_data.length * 5000 + ' points.</p>' +
+      // '<p>For your information, during the training, you received a total score of <span id=score></span> out of ' + training_data.length * 5000 + ' points.</p>' +
       '<p>During the test, you will now see ' +test_data.length*2+ ' page loads that you will have to rate similar to the training.</p>' +
       'The study begins beyond this final screen, you will not be able to go backward from here.',
   ],
   show_clickable_nav: true,
+  allow_keys: false,
   on_load: function(){
-    $('#score').text(total_score);
+    // $('#score').text(total_score);
   },
   on_finish: function(data){
     total_score = 0;
@@ -180,8 +184,8 @@ var debrief_block = {
   stimulus: function() {
 
     return "<p>Thank you very much for participating." +
-    "<br>You scored a total of <span id=totalscore></span> points during the test." +
-    "<br>That's a fantastic score.<br>Congratulation!</p>" +
+    // "<br>You scored a total of <span id=totalscore></span> points during the test." +
+    // "<br>That's a fantastic score.<br>Congratulation!</p>" +
     "<p>The goal of this test is to better understand what makes pages load fast for our users." +
     "<br>With the results, we will be able to create an ever faster experience for Firefox Quantum." +
     "Thank you for contributing!</p>" +
@@ -189,7 +193,7 @@ var debrief_block = {
 
   },
   on_load: function(){
-    $('#totalscore').text(total_score);
+    // $('#totalscore').text(total_score);
   },
 };
 

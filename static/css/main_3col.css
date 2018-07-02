@@ -1,3 +1,7 @@
+#currentscore, #total_current_score {
+  visibility:hidden;
+}
+
 .clear_content {
   all:initial;
 }
