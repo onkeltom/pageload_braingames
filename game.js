@@ -77,28 +77,11 @@ var shuffled_test_data = jsPsych.randomization.repeat(test_data, 2) // incl one 
 // start creating the actual test routine in an empty timeline
 var timeline = [];
 
-// The instructions block at the very beginning to introduce users to the test
-// create as a variable and push it to timeline
 var welcome = {
   type: 'instructions',
     pages: [   // "<p></p>",
       "<h3>Thank you for your participation in this \"BrainGame\"</h3>" +
-      "<p>BrainGames use research techniques from cognitive science<br>to better understand how our minds work when using the web</p>" +
-      "<p>That understanding can improve web experiences by<br>tailoring them around data contributed through your participation</p>" +
-      "<p>Left and right arrow keys navigate<br>back and forward through the instructions</p>",
-
-      "<p><strong>Please do NOT do any of the following things,<br>or you will be disqualified to prevent invalidating results:</strong></p>" +
-      "<ul><li>Hit ESC to exit fullscreen mode</li><li>Switch tabs or programs during the procedure</li><li>Zoom in or out</li><li>Reload the page once you have begun trials</li></ul>" +
-      "<p>You will be taken out of fullscreen mode after completing the study</p>",
-
-      "<p>On each trial of this experiment<br>you will load the same website under different conditions.<br>The website looks like this:</p>" + "<img id ='screenshot' src='static/img/website.png'></img>" +
-      "<p>Depending on your screen size, the website may look a bit different in your browser.<br>In some cases, you will not be able to see all elements at once on your screen.</p>",
-
-      "<p>During the test, there are a total of "+test_data.length*2+" trials to capture enough data for us to draw conclusions.<br></p>" +
-      "<p>To familiarize yourself with the test, we will do a training session and present you with the maximum differences between conditions.<br>" +
-      "You will also be able to practice the rating task that we will explain next.<br>" +
-      // "Correct trials earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without making mistakes</p>" +
-      "<p>The training sessions begins beyond this final instruction screen, you will not be able to go backward from here</p>"
+      "<p>Before starting the test, please read the test instructions carefully on the next page.</p>",
   ],
   show_clickable_nav: true,
   allow_keys: false
@@ -106,36 +89,77 @@ var welcome = {
 
 timeline.push(welcome);
 
-var training_pt1 = {
-  type: 'instructions',
-    pages: [   // "<p></p>",
-      "<h3>Training</h3>" +
-      "<p>Before starting with the test, we want you to familiarize with the test procedure and the rating scale." +
-      "<br>Therefore, we will present you " +training_data.length+ " trials which represent the maximum range of differences between conditions.</p>" +
-      "<p>You will start each page load by clicking on a button. After the page has finished loading, you will automatically be redirected to give your rating.</p>",
-
-      "<p>On the slider that you will see, you are asked to judge your experience of the previous page load." +
-      "<br>There is no right or wrong. We do these tests to better understand our users.<br>Trying to be consistent in your ratings is all that we ask from you.</p>" +
-      "<img id ='slider' src='static/img/slider.png'></img>" +
-      "<p>Please respond as quickly as possible.<br>You will have up to 5 seconds, but faster responses earn more points." +
-      "You will earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without becoming inconsistent.</p>" +
-      "<p>The training begins beyond this final instruction screen, you will not be able to go backward from here.</p>"
-  ],
-  show_clickable_nav: true,
-  allow_keys: false
+var instructions = {
+  type: "external-html",
+  url: "static/html/inst2.html",
+  cont_btn: "consent"
 };
 
-timeline.push(training_pt1);
+timeline.push(instructions)
+
+// The instructions block at the very beginning to introduce users to the test
+// create as a variable and push it to timeline
+// var welcome = {
+//   type: 'instructions',
+//     pages: [   // "<p></p>",
+//       "<h3>Thank you for your participation in this \"BrainGame\"</h3>" +
+//       "<p>BrainGames use research techniques from cognitive science<br>to better understand how our minds work when using the web</p>" +
+//       "<p>That understanding can improve web experiences by<br>tailoring them around data contributed through your participation</p>" +
+//       "<p>Left and right arrow keys navigate<br>back and forward through the instructions</p>",
+//
+//       "<p><strong>Please do NOT do any of the following things,<br>or you will be disqualified to prevent invalidating results:</strong></p>" +
+//       "<ul><li>Hit ESC to exit fullscreen mode</li><li>Switch tabs or programs during the procedure</li><li>Zoom in or out</li><li>Reload the page once you have begun trials</li></ul>" +
+//       "<p>You will be taken out of fullscreen mode after completing the study</p>",
+//
+//       "<p>On each trial of this experiment<br>you will load the same website under different conditions.<br>The website looks like this:</p>" + "<img id ='screenshot' src='static/img/website.png'></img>" +
+//       "<p>Depending on your screen size, the website may look a bit different in your browser.<br>In some cases, you will not be able to see all elements at once on your screen.</p>",
+//
+//       "<p>During the test, there are a total of "+test_data.length*2+" trials to capture enough data for us to draw conclusions.<br></p>" +
+//       "<p>To familiarize yourself with the test, we will do a training session and present you with the maximum differences between conditions.<br>" +
+//       "You will also be able to practice the rating task that we will explain next.<br>" +
+//       // "Correct trials earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without making mistakes</p>" +
+//       "<p>The training sessions begins beyond this final instruction screen, you will not be able to go backward from here</p>"
+//   ],
+//   show_clickable_nav: true,
+//   allow_keys: false
+// };
+//
+// timeline.push(welcome);
+
+// var training_pt1 = {
+//   type: 'instructions',
+//     pages: [   // "<p></p>",
+//       "<h3>Training</h3>" +
+//       "<p>Before starting with the test, we want you to familiarize with the test procedure and the rating scale." +
+//       "<br>Therefore, we will present you " +training_data.length+ " trials which represent the maximum range of differences between conditions.</p>" +
+//       "<p>You will start each page load by clicking on a button. After the page has finished loading, you will automatically be redirected to give your rating.</p>",
+//
+//       "<p>On the slider that you will see, you are asked to judge your experience of the previous page load." +
+//       "<br>There is no right or wrong. We do these tests to better understand our users.<br>Trying to be consistent in your ratings is all that we ask from you.</p>" +
+//       "<img id ='slider' src='static/img/slider.png'></img>" +
+//       "<p>Please respond as quickly as possible.<br>You will have up to 5 seconds, but faster responses earn more points." +
+//       "You will earn a point for each remaining millisecond in the 5 sec period<br>We want you to respond as fast as you can without becoming inconsistent.</p>" +
+//       "<p>The training begins beyond this final instruction screen, you will not be able to go backward from here.</p>"
+//   ],
+//   show_clickable_nav: true,
+//   allow_keys: false
+// };
+//
+// timeline.push(training_pt1);
 
 // after introduction, launch a training and anchoring to familiarize participants
 // with the range of perceivable differences between stimuli and make them practice
 // the rating after each trial
 
-var training_block ={
+var training_block = {
   type: "external-html",
   timeline: shuffled_training_data,
   cont_btn: "end-trial",
   executeScript: true,
+  on_finish: function(data){
+    data.configuration = JSON.stringify(configuration);
+    // console.log(JSON.stringify(configuration));
+  }
 }
 
 timeline.push(training_block)
@@ -172,7 +196,11 @@ var test_block = {
   // randomize_order: true,
   // repetitions: 2,
   cont_btn: "end-trial",
-  executeScript: true
+  executeScript: true,
+  on_finish: function(data){
+    data.configuration = JSON.stringify(configuration);
+    // console.log(JSON.stringify(configuration));
+  }
 };
 
 timeline.push(test_block)

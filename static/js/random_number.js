@@ -18,6 +18,6 @@ function promiseGenerator({id, timeout}) {
       };
       resolve();
     }, timeout);
-    console.log(id + " at " + timeout);
+    // console.log(id + " at " + timeout);
   })
 }
