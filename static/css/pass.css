@@ -1,0 +1,465 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
+#boardingpass {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Helvetica, arial, sans-serif;
+  letter-spacing: 0.75px;
+  color: #000000;
+  background-color: #f9ebd2;
+  font-size: 16px;
+  width: 100%;
+  height: 100%
+}
+
+#boardingpass h1,
+#boardingpass h2,
+#boardingpass h3,
+#boardingpass h4,
+#boardingpass h5,
+#boardingpass h6,
+#boardingpass p {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+#boardingpass h1 {
+  font-weight: 600;
+  font-size: 2em;
+}
+
+#boardingpass h2 {
+  color: #ff4500;
+  font-size: 2rem;
+}
+
+#boardingpass h4,
+#boardingpass h5 {
+  color: #989898;
+  font-size: 0.8rem;
+}
+
+#boardingpass h6 {
+  font-size: 1.6rem;
+}
+
+#boardingpass p {
+  letter-spacing: 1px;
+}
+
+#boardingpass img {
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.section, .header {
+  display: flex;
+  background-color: white;
+}
+.section > div, .header > div {
+  padding: 10px 10px;
+}
+@media (max-width: 500px) {
+  .section > div:first-child, .header > div:first-child {
+    padding: 10px 10px 10px 0;
+  }
+}
+
+.header > div {
+  min-width: 65px;
+}
+
+.flight--general {
+  text-align: center;
+  align-items: center;
+}
+.flight--general div:first-of-type, .flight--general div:last-of-type {
+  flex: 1 50%;
+}
+.flight--general div:first-child {
+  padding: 10px 10px;
+}
+.flight--qrcode {
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+.flight--qrcode img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  font-family: "object-fit: contain";
+  height: 100%;
+}
+
+.extra--meteo p:last-of-type {
+  font-size: 0.8rem;
+}
+.extra--image {
+  height: 100%;
+  display: block;
+  padding: 0;
+}
+.extra--image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  font-family: "object-fit: cover";
+  max-height: 100%;
+  min-width: 100%;
+}
+
+.header {
+  background-color: #ff4500;
+  color: #f9ebd2;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header h1 {
+  flex: 1 90%;
+}
+.header h5 {
+  color: #f9ebd2;
+}
+.header > div {
+  flex: 1 10%;
+}
+.header > div:first-of-type {
+  padding-left: 0;
+}
+
+@media (max-width: 500px) {
+  .section, .header {
+    padding: 10px 20px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .extra--image {
+    min-height: inherit;
+  }
+
+  .flight--general {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+  }
+  .flight--general div:first-of-type {
+    text-align: left;
+    padding-left: 0;
+  }
+  .flight--general div:last-of-type {
+    text-align: right;
+    padding-right: 0;
+  }
+
+  .extra--meteo {
+    flex-direction: column;
+  }
+  .extra--meteo > div {
+    width: 100%;
+    padding-left: 0;
+  }
+  .extra--image img {
+    height: auto;
+    max-height: -webkit-fill-available;
+  }
+}
+@media (min-width: 501px) {
+  .section, h1, .header div:first-of-type {
+    padding: 10px 20px;
+  }
+
+  .flight--general {
+    padding-bottom: 0;
+  }
+
+  .flight--TimeInfo {
+    padding-top: 0;
+  }
+
+  .flight--qrcode {
+    padding: 0 10px;
+  }
+
+  .extra--meteo {
+    justify-content: space-around;
+  }
+  .extra--meteo > div {
+    max-width: 30%;
+  }
+  .extra--meteo > div:last-of-type {
+    padding-right: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .flight--TimeInfo {
+    padding-top: 10px;
+  }
+
+  .flight--qrcode {
+    padding: 0 10px;
+  }
+}
+.main {
+  display: grid;
+  display: block\9;
+  max-width: 500px\9;
+  margin: 0 auto;
+}
+
+.header {
+  border-radius: 10px 10px 0 0;
+}
+@media (max-width: 500px) {
+  .header {
+    border-radius: 0;
+  }
+}
+
+.flight--qrcode {
+  border-radius: 0 0 10px 0;
+}
+@media (max-width: 500px) {
+  .flight--qrcode {
+    border-radius: 0;
+  }
+}
+.flight--general {
+  border-radius: 0 0 0 10px;
+}
+
+.extra--meteo {
+  border-radius: 10px;
+}
+.extra--image {
+  display: flex;
+}
+
+@media (min-width: 501px) and (max-width: 1023px) {
+  .flight--TimeInfo {
+    border-radius: 0 0 0 10px;
+  }
+  .flight--general {
+    border-radius: 0;
+  }
+  .flight--qrcode {
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 501px) {
+  .main {
+    height: 100vh;
+  }
+
+  .flight--qrcode {
+    height: 100%;
+    padding: 0;
+  }
+
+  .extra--image {
+    min-height: 100vh;
+  }
+}
+@supports (display: grid) {
+  @media (min-width: 501px) {
+    .flight--qrcode {
+      height: initial;
+    }
+  }
+}
+@supports not (display: grid) {
+  .main {
+    margin: 0 auto;
+    max-width: 500px;
+    grid-gap: 0 0;
+    display: block;
+  }
+
+  .header {
+    border-radius: 0;
+  }
+  @media (max-width: 500px) {
+    .header {
+      border-radius: 0;
+    }
+  }
+
+  .flight--qrcode {
+    border-radius: 0;
+  }
+  @media (max-width: 500px) {
+    .flight--qrcode {
+      border-radius: 0;
+    }
+  }
+  .flight--general {
+    border-radius: 0;
+  }
+
+  .extra--meteo {
+    border-radius: 0;
+  }
+  .extra--image {
+    min-height: inherit;
+    display: block;
+  }
+
+  @media (min-width: 501px) and (max-width: 1023px) {
+    .flight--TimeInfo {
+      border-radius: 0;
+    }
+    .flight--general {
+      border-radius: 0;
+    }
+    .flight--qrcode {
+      justify-content: center;
+    }
+  }
+  @media (min-width: 501px) {
+    .main {
+      height: inherit;
+    }
+
+    .flight--qrcode {
+      height: initial;
+    }
+
+    .extra--image {
+      min-height: inherit;
+    }
+  }
+}
+.extra--meteo {
+  z-index: 2;
+}
+@media (min-width: 501px) {
+  .extra--meteo {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    grid-template-columns: 1fr  1fr;
+  }
+
+  .header {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+  }
+
+  .flight--general, .flight--TimeInfo, .flight--PassInfo, .flight--qrcode {
+    grid-column: 1 / span 2;
+  }
+  .flight--general {
+    grid-row: 2 / span 1;
+  }
+  .flight--TimeInfo {
+    grid-row: 3 / span 1;
+  }
+  .flight--PassInfo {
+    grid-row: 4 / span 1;
+  }
+  .flight--qrcode {
+    grid-row: 5 / span 1;
+  }
+
+  .extra--meteo, .extra--image {
+    grid-row: 6 / span 1;
+  }
+  .extra--meteo {
+    grid-column: 1 / span 1;
+  }
+  .extra--image {
+    grid-column: 2 / span 1;
+  }
+}
+@media (min-width: 501px) and (max-width: 1023px) {
+  .main {
+    grid-template-columns: 1fr repeat(3, minmax(100px, 200px)) 1fr;
+    grid-template-rows: 1fr 60px repeat(3, 75px) 10vh auto 1fr;
+  }
+
+  .header {
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 1;
+    z-index: 2;
+  }
+
+  .flight--PassInfo, .flight--qrcode {
+    z-index: 2;
+  }
+  .flight--general {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+    z-index: 3;
+  }
+  .flight--TimeInfo {
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
+    z-index: 3;
+  }
+  .flight--PassInfo {
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
+  }
+  .flight--qrcode {
+    grid-column: 4 / span 1;
+    grid-row: 3 / span 3;
+  }
+
+  .extra--meteo {
+    grid-column: 2 / span 3;
+    grid-row: 7 / span 1;
+  }
+  .extra--image {
+    grid-column: 1 / span 7;
+    grid-row: 1 / span 8;
+  }
+}
+@media (min-width: 1024px) {
+  .main {
+    grid-template-columns: 1fr repeat(4, 150px) 250px 1fr;
+    grid-template-rows: 1fr 60px repeat(2, 100px) 0.5fr auto 1fr;
+  }
+
+  .header {
+    grid-column: 2 / span 5;
+    grid-row: 2 / span 1;
+    z-index: 2;
+  }
+
+  .flight--general, .flight--TimeInfo, .flight--PassInfo, .flight--qrcode {
+    z-index: 2;
+  }
+  .flight--general {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 2;
+  }
+  .flight--TimeInfo {
+    grid-column: 4 / span 2;
+    grid-row: 3 / span 1;
+  }
+  .flight--PassInfo {
+    grid-column: 4 / span 2;
+    grid-row: 4 / span 1;
+  }
+  .flight--qrcode {
+    grid-column: 6 / span 1;
+    grid-row: 3 / span 2;
+  }
+
+  .extra--meteo {
+    grid-column: 2 / span 5;
+    grid-row: 6/span 1;
+  }
+  .extra--image {
+    grid-column: 1 / span 7;
+    grid-row: 1 / span 7;
+    z-index: 1;
+  }
+}
