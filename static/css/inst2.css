@@ -37,33 +37,33 @@ hr {
 }
 
 
-ul,
-ol {
+.instructions ul,
+.instructions ol {
     margin: 0.075rem 0;
 }
 
-li {
+.instructions li {
     margin-bottom: 0.25rem;
 }
 
-ul {
+.instructions ul {
     list-style: none;
     padding-left: 50px;
     margin: 0;
 }
 
-ul li {
+.instructions ul li {
     position: relative;
     padding-left: 1em;
 }
 
-ul li::before {
+.instructions ul li::before {
     position: absolute;
     left: 0;
     content: '•';
 }
 
-ol {
+.instructions ol {
     padding-left: 1.2rem;
 }
 

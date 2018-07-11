@@ -21,3 +21,16 @@ function promiseGenerator({id, timeout}) {
     // console.log(id + " at " + timeout);
   })
 }
+
+function promiseGenerator_display({id, timeout}) {
+	return new Promise((resolve, reject) => {
+  	setTimeout(() => {
+      if (jsPsych.data.getURLVariable('debug') === 'true') {
+        $('.debug').html(id + ' visible after ' + timeout + 'ms.');
+      };
+      $(id).css({'display': 'block'});
+      resolve();
+    }, timeout);
+    // console.log(id + " at " + timeout);
+  })
+}

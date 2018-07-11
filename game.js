@@ -42,16 +42,8 @@ var total_score = 0
 // and link it to a js_url which will contain the specific animation for this content.
 
 var training_data = [
-  { data: {js_url: "static/js/agency_270_443.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_270_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_270_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_270_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_600_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_600_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_600_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1200_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_1200_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_3400_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  // { data: {js_url: "static/js/agency_270_443.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/news_270_443.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 ];
 
 // similar to the training data, create an array that holds all trials under test
