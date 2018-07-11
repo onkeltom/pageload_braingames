@@ -2,11 +2,6 @@
   all:initial;
 }
 
-.different_fonts {
-  font-size: 90%;
-  font-family: georgia,"times new roman",times,serif;
-}
-
 .test {
   display: none;
 }
