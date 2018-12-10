@@ -10,7 +10,7 @@ var total_score = 0
                'static/img/logo.png', 'static/img/marketing.png',
                'static/img/notebook.jpg', 'static/img/sunglasses.jpg',
                'static/img/web.png', 'static/img/website.png',
-               'static/img/slider.png',
+               'static/img/slider.png', 'static/img/city.jpg',
              ];
 
  // create the answer sheet to each stimulus
@@ -51,10 +51,10 @@ var training_data = [
   // { data: {js_url: "static/js/agency_600_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   // { data: {js_url: "static/js/agency_1200_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   // { data: {js_url: "static/js/agency_1200_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_3400_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  // { data: {js_url: "static/js/agency_3400_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   // { data: {js_url: "static/js/news_270_443.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   // { data: {js_url: "static/js/news_270_1000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  // { data: {js_url: "static/js/news_270_2000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_270_2000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   // { data: {js_url: "static/js/news_270_5700.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   // { data: {js_url: "static/js/news_600_1000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   // { data: {js_url: "static/js/news_600_2000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },

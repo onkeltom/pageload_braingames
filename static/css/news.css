@@ -2,6 +2,13 @@
   display: none;
 }
 
+#img_video {
+  width: 400px;
+  height: auto;
+}
+
+
+
 #sport1 {
   padding-bottom: 12px;
   border-bottom: 1px solid #ddd;
