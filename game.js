@@ -42,6 +42,7 @@ var total_score = 0
 // and link it to a js_url which will contain the specific animation for this content.
 
 var training_data = [
+<<<<<<< HEAD
   { data: {js_url: "static/js/agency_270_443.js" }, timeline: [{url: "static/html/boarding.html"}, evaluate] },
   // { data: {js_url: "static/js/agency_270_443.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   // { data: {js_url: "static/js/agency_270_1000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
@@ -53,6 +54,9 @@ var training_data = [
   // { data: {js_url: "static/js/agency_1200_2000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   // { data: {js_url: "static/js/agency_1200_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   // { data: {js_url: "static/js/agency_3400_5700.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+=======
+  { data: {js_url: "static/js/agency_270_443.js" }, timeline: [{url: "static/html/pass.html"}, evaluate] },
+>>>>>>> 89067b3b06a3c1834b206f1077d034774237f8cd
 ];
 
 // similar to the training data, create an array that holds all trials under test
