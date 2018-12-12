@@ -7,7 +7,18 @@
   height: auto;
 }
 
+#video {
+  width: 400px;
+  height: 300px;
+  background: url("../img/city.jpg") no-repeat;
+  display: inline-block;
+  background-size: contain;
+}
 
+#video:hover {
+  background: url("../img/city_play.jpg") no-repeat;
+  background-size: contain;
+}
 
 #sport1 {
   padding-bottom: 12px;

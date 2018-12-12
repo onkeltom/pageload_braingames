@@ -11,6 +11,7 @@ var total_score = 0
                'static/img/notebook.jpg', 'static/img/sunglasses.jpg',
                'static/img/web.png', 'static/img/website.png',
                'static/img/slider.png', 'static/img/city.jpg',
+               'static/img/city_play.jpg',
              ];
 
  // create the answer sheet to each stimulus
