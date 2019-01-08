@@ -4,9 +4,9 @@
 // be used to close the trial and move on to the user rating task
 // ******
 
-firstpaint = 1600;
-tttext = 2400;
-ttimages = 3200;
+firstpaint = 1000;
+tttext = 2000;
+ttimages = 3000;
 plt = 4000;
 
 var configuration = [

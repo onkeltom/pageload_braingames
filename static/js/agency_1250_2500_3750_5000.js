@@ -28,9 +28,9 @@
 //                     ];
 
 
-firstpaint = 2000;
-tttext = 3000;
-ttimages = 4000;
+firstpaint = 1250;
+tttext = 2500;
+ttimages = 3750;
 plt = 5000;
 
 var configuration = [

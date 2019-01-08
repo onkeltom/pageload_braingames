@@ -4,10 +4,10 @@
 // be used to close the trial and move on to the user rating task
 // ******
 
-firstpaint = 1600;
-tttext = 2400;
-ttimages = 3200;
-plt = 4000;
+firstpaint = 1250;
+tttext = 2500;
+ttimages = 3750;
+plt = 5000;
 
 var configuration = [
                       { id: '#top', timeout: firstpaint },
