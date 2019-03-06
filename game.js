@@ -7,6 +7,16 @@ var tttext = 0;
 var ttimages = 0;
 var plt = 0;
 const jitter = 0.2;
+var verification = '';
+
+var my_secret_key = '1c9f105664f47c290961f64ace2c879a6c6942e6d1935732ccca70c63803fbea';
+var urlvar = jsPsych.data.urlVariables();
+//console.log(urlvar.campaign);
+//console.log(urlvar.worker);
+//console.log(urlvar.randkey);
+var string_final = urlvar.campaign + urlvar.worker + urlvar.randkey + my_secret_key;
+verification = 'mw-'+sha256(string_final);
+//console.log(verification);
 
 // preload all image files in the test
  var images = ['static/img/bag.jpg', 'static/img/branding.png',
@@ -49,29 +59,29 @@ const jitter = 0.2;
 
 var training_data = [
   { data: {js_url: "static/js/news_450_900_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+// { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] }
+//  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] }
 ];
 
 // similar to the training data, create an array that holds all trials under test
@@ -81,24 +91,24 @@ var test_data = [
   { data: {js_url: "static/js/news_450_900_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+// { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+//  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] }
@@ -106,7 +116,8 @@ var test_data = [
 
 // create a shuffled array from test_data including randomized order and repetition
 var shuffled_training_data = jsPsych.randomization.repeat(training_data, 1) // no repetition
-var shuffled_test_data = jsPsych.randomization.repeat(test_data, 2) // incl one repetition
+//var shuffled_test_data = jsPsych.randomization.repeat(test_data, 2) // incl one repetition
+var shuffled_test_data = jsPsych.randomization.repeat(test_data, 1) // no repetition
 
 // start creating the actual test routine in an empty timeline
 var timeline = [];
@@ -189,7 +200,14 @@ var training_block = {
   type: "external-html",
   timeline: shuffled_training_data,
   cont_btn: "end-trial",
+  data: {
+    bags: 1,
+  },
   executeScript: true,
+  on_start: function(trial){
+    trial.bags = Math.floor(Math.random() * 6);
+    trial.data.bags = trial.bags+1;
+  },
   on_finish: function(data){
     data.configuration = JSON.stringify(configuration);
     // console.log(JSON.stringify(configuration));
@@ -206,7 +224,7 @@ var before_test_starts = {
   pages: [
       '<p>This is the end of the training.</p>' +
       // '<p>For your information, during the training, you received a total score of <span id=score></span> out of ' + training_data.length * 5000 + ' points.</p>' +
-      '<p>During the test, you will now see ' +test_data.length*2+ ' page loads that you will have to rate similar to the training.</p>' +
+      '<p>During the test, you will now see ' +test_data.length+ ' page loads that you will have to rate similar to the training.</p>' +
       'The study begins beyond this final screen, you will not be able to go backward from here.',
   ],
   show_clickable_nav: true,
@@ -231,6 +249,9 @@ var test_block = {
   // repetitions: 2,
   cont_btn: "end-trial",
   executeScript: true,
+  on_start: function(trial){
+    trial.bags = Math.floor(Math.random() * 6);
+  },
   on_finish: function(data){
     data.configuration = JSON.stringify(configuration);
     // console.log(JSON.stringify(configuration));
@@ -251,16 +272,18 @@ var debrief_block = {
     "<p>The goal of this test is to better understand what makes pages load fast for our users." +
     "<br>With the results, we will be able to create an ever faster experience for Firefox Quantum." +
     "Thank you for contributing!</p>" +
+    "<p>Your Microworkers verification code is: <b>"+verification+"</b></p>" +
     "<p>Press any key to complete the experiment.</p>"
 
   },
   on_load: function(){
     // $('#totalscore').text(total_score);
+    jsPsych.data.addProperties({campaign: urlvar.campaign, worker: urlvar.worker, randkey: urlvar.randkey, verificationcode: verification});
+    // console.log(verification);
   },
 };
 
 timeline.push(debrief_block)
-
 
 // this is jsPsych init function to start the test.
 jsPsych.init({
@@ -271,3 +294,5 @@ jsPsych.init({
         jsPsych.data.displayData();
       }
 });
+
+

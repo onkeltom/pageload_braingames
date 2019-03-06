@@ -38,7 +38,7 @@
   </div>
 
   <div class="left_title">
-    Modern, Minimal & Inspiring.
+    Modern, Minimal &amp; Inspiring.
   </div>
 
   <div class="right_title">
@@ -100,7 +100,7 @@
 
 
       <div class="about">
-        <p class="experts">WE'RE EXPERT TO CREATE BEAUTIFUL DESIGN & SMART TECHNOLOGY</p>
+        <p class="experts">WE'RE EXPERT TO CREATE BEAUTIFUL DESIGN &amp; SMART TECHNOLOGY</p>
         <!-- Nullam at enim mauris. Donec et nunc ipsum. Suspendi tempus fringilla ipsu Cras metus euismod velit gravida at nunc ipsum. -->
       </div>
 
@@ -108,7 +108,7 @@
         <div class="work_container">
           <div class="work1">
             <img class="object-fit_scale-down smallimg" src="static/img/web.png" />
-            WEB & MOBILE
+            WEB &amp; MOBILE
           </div>
           <div class="work2">
             <img class="object-fit_scale-down smallimg" src="static/img/branding.png" />
@@ -127,7 +127,7 @@
   <div class="footer">
     <div class="footer_left">
       LET'S WORK TOGETHER
-      <p> Call: 11.22.33.44.55 OR<br/>Email : mailto:hello@agency.com
+      <p> Call: 11.22.33.44.55 OR<br/>Email : mailto:hello@agency.com </p>
     </div>
   </div>
 
@@ -143,6 +143,28 @@
   js.type = "text/javascript";
   js.src = jsPsych.currentTrial().data.js_url;
   document.body.appendChild(js);
+</script>
+
+<script type="text/javascript">
+  var bucket = [];
+
+  for (var i=2;i<=6;i++) {
+     bucket.push(i);
+  }
+  
+  function getRandomFromBucket() {
+     var randomIndex = Math.floor(Math.random()*bucket.length);
+     return bucket.splice(randomIndex, 1)[0];
+  }
+  
+  bags = jsPsych.currentTrial().bags;
+  // console.log(bags);
+  
+  for (var j=0;j<bags;j++) {
+    idx = getRandomFromBucket();
+    jQueryPath = 'div.img'+idx+' img';
+    $(jQueryPath).attr("src","static/img/bag.jpg");
+  }                                             
 </script>
 
 <script type="text/javascript">
