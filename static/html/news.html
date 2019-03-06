@@ -122,10 +122,10 @@
     </div>
     <!-- END ADS -->
     <h2 class="heading-blue">Sports Headlines</h2>
-    <img id="wayne" src="static/img/wayne.jpg" alt="" />
+    <img id="img1" src="static/img/curry.jpg" alt="" />
     <h3><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
     <p id="sport1">Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
-    <img id="casey" src="static/img/wayne.jpg" alt="" />
+    <img id="img2" src="static/img/curry.jpg" alt="" />
     <h3><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></h3>
     <p>Ut sed arcu nulla. In eget lectus vitae purus volutpat consectetur suscipit ut justo.</p>
     <p><a href="#">More headlines &raquo;</a></p>
@@ -169,6 +169,22 @@
   js.type = "text/javascript";
   js.src = jsPsych.currentTrial().data.js_url;
   document.body.appendChild(js);
+</script>
+
+<script type="text/javascript">
+  football = Math.floor(jsPsych.currentTrial().football);
+  
+  if (football == 1) {
+    var rnd = Math.random();
+    if (rnd < 0.5) {
+        $('img.img1').attr("src","static/img/coutinho.jpg");
+    } else {
+        $('img.img2').attr("src","static/img/coutinho.jpg");
+    }
+  } else if (football == 2) {
+    $('img#img1').attr("src","static/img/coutinho.jpg");
+    $('img#img2').attr("src","static/img/coutinho.jpg");
+  }                                          
 </script>
 
 </html>

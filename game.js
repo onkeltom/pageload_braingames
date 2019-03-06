@@ -26,7 +26,10 @@ verification = 'mw-'+sha256(string_final);
                'static/img/notebook.jpg', 'static/img/sunglasses.jpg',
                'static/img/web.png', 'static/img/website.png',
                'static/img/slider.png', 'static/img/city.jpg',
-               'static/img/city_play.jpg',
+               'static/img/city_play.jpg', 'static/img/coutinho.jpg',
+               'static/img/curry.jpg', 'static/img/blank.jpg',
+               'static/img/work-4.jpg', 'static/img/side-ad.png',
+               'static/img/ad-blank.png', 'static/img/microphone.png'
              ];
 
  // create the answer sheet to each stimulus
@@ -201,12 +204,15 @@ var training_block = {
   timeline: shuffled_training_data,
   cont_btn: "end-trial",
   data: {
-    bags: 1,
+    bags: 1, 
+    football: 0,
   },
   executeScript: true,
   on_start: function(trial){
     trial.bags = Math.floor(Math.random() * 6);
     trial.data.bags = trial.bags+1;
+    trial.football = Math.floor(Math.random() * 3);
+    trial.data.football = trial.football;
   },
   on_finish: function(data){
     data.configuration = JSON.stringify(configuration);
@@ -248,9 +254,16 @@ var test_block = {
   // randomize_order: true,
   // repetitions: 2,
   cont_btn: "end-trial",
+  data: {
+    bags: 1,
+    football: 0, 
+  },
   executeScript: true,
   on_start: function(trial){
     trial.bags = Math.floor(Math.random() * 6);
+    trial.data.bags = trial.bags+1;
+    trial.football = Math.floor(Math.random() * 3);
+    trial.data.football = trial.football;
   },
   on_finish: function(data){
     data.configuration = JSON.stringify(configuration);
