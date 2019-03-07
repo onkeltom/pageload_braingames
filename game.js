@@ -63,8 +63,7 @@ var qoe_option = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
  var evaluate = {
   type: 'survey-multi-choice',
-  questions: [{prompt: "<h3>How many bags or hockey players did you find on the previous page?</h3>", options: bags_option, required: false, horizontal: true,},
-  {prompt: "<br><br><h3>How did you experience the loading of the last page?</h3>0 refers to the slowest experience, 10 refers to the fastest experience.", options: qoe_option, required: false, horizontal: true}],
+  questions: [{prompt: "<h3>How did you experience the loading of the last page?</h3>0 refers to the slowest experience, 10 refers to the fastest experience.", options: qoe_option, required: false, horizontal: true}, {prompt: "<br><br><h3>How many bags or hockey players did you find on the previous page?</h3>", options: bags_option, required: false, horizontal: true,}],
 };
 
 // This variable is where you will define the test_data
