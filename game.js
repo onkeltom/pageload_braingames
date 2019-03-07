@@ -204,7 +204,7 @@ var training_block = {
   timeline: shuffled_training_data,
   cont_btn: "end-trial",
   data: {
-    bags: 1, 
+    bags: 1,
     football: 0,
   },
   executeScript: true,
@@ -256,7 +256,7 @@ var test_block = {
   cont_btn: "end-trial",
   data: {
     bags: 1,
-    football: 0, 
+    football: 0,
   },
   executeScript: true,
   on_start: function(trial){
@@ -272,6 +272,16 @@ var test_block = {
 };
 
 timeline.push(test_block)
+
+// post-test survey about impact factors
+
+var post_test_survey = { // still just a test
+  type: 'survey-text',
+  preamble: '<h3>This is some text to appear on top.</h3> It can also be formatted.',
+  questions: [{prompt: "This is the post-test survey. Just testing here!", rows: 10, columns: 100}],
+};
+
+timeline.push(post_test_survey)
 
 // study debrief
 
@@ -307,5 +317,3 @@ jsPsych.init({
         jsPsych.data.displayData();
       }
 });
-
-
