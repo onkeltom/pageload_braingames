@@ -40,53 +40,53 @@ var qoe_option = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
  // code piece needs to be before creating the test stimuli blocks
  // to make the nested timelines work
 
- var evaluate = {
-     type: 'html-slider-response',
-     stimulus: '<p>How did you experience the loading of the last page?</p>',
-     labels: ['slowest experience', 'fastest experience'],
-     // prompt: "<p> refers to the slowest loading and <emph>10</emph> to the fastest loading experience.</p>",
-     min: 0,
-     max: 10,
-     start: 5,
-     // initialize the slider scale to a random position at each trial
-     on_start: function(trial){
-       // trial.start = Math.floor(Math.random() * 11);
-     },
-     // This adds the current random scale init to data as well as the stimulus that was scored here
-     on_finish: function(data){
-       data.scale_init = jsPsych.currentTrial().start;
-       total_score = total_score + (5000 - jsPsych.data.get().last(1).values()[0].rt);
-       // console.log(total_score);
-     }
- };
+ // var evaluate = {
+ //     type: 'html-slider-response',
+ //     stimulus: '<p>How did you experience the loading of the last page?</p>',
+ //     labels: ['slowest experience', 'fastest experience'],
+ //     // prompt: "<p> refers to the slowest loading and <emph>10</emph> to the fastest loading experience.</p>",
+ //     min: 0,
+ //     max: 10,
+ //     start: 5,
+ //     // initialize the slider scale to a random position at each trial
+ //     on_start: function(trial){
+ //       // trial.start = Math.floor(Math.random() * 11);
+ //     },
+ //     // This adds the current random scale init to data as well as the stimulus that was scored here
+ //     on_finish: function(data){
+ //       data.scale_init = jsPsych.currentTrial().start;
+ //       total_score = total_score + (5000 - jsPsych.data.get().last(1).values()[0].rt);
+ //       // console.log(total_score);
+ //     }
+ // };
 
- var multi_choice_block_horizontal = {
-      type: 'survey-multi-choice',
-      questions: [{prompt: "How many bags or hockey players did you find on the previous page?", options: bags_option, required: true, horizontal: true,},
-       {prompt: "<br><br>How did you experience the loading of the last page?<br><br>0 refers to the slowest experience,<br>10 refers to the fastest experience.", options: qoe_option, required: true, horizontal: true}],
-    };
+ var evaluate = {
+  type: 'survey-multi-choice',
+  questions: [{prompt: "<h3>How many bags or hockey players did you find on the previous page?</h3>", options: bags_option, required: false, horizontal: true,},
+  {prompt: "<br><br><h3>How did you experience the loading of the last page?</h3>0 refers to the slowest experience, 10 refers to the fastest experience.", options: qoe_option, required: false, horizontal: true}],
+};
 
 // This variable is where you will define the test_data
 // Each line is one stimulus for which one will select the url in the timeline for content to be shown
 // and link it to a js_url which will contain the specific animation for this content.
 
 var training_data = [
-  { data: {js_url: "static/js/news_450_900_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, multi_choice_block_horizontal] },
+  { data: {js_url: "static/js/news_450_900_2250_3000.js" }, timeline: [{url: "static/html/news.html"},evaluate] },
 //  { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, multi_choice_block_horizontal] },
+  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, multi_choice_block_horizontal] },
+  { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, multi_choice_block_horizontal] },
+  { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 // { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, multi_choice_block_horizontal] },
+  { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
