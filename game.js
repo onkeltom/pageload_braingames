@@ -8,6 +8,7 @@ var ttimages = 0;
 var plt = 0;
 const jitter = 0.2;
 var verification = '';
+var interaction_data = '';
 
 var my_secret_key = '1c9f105664f47c290961f64ace2c879a6c6942e6d1935732ccca70c63803fbea';
 var urlvar = jsPsych.data.urlVariables();
@@ -82,11 +83,11 @@ var training_data = [
 //  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  // { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  // { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 // { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  // { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
@@ -102,8 +103,8 @@ var training_data = [
 
 var test_data = [
   { data: {js_url: "static/js/news_450_900_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  // { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  // { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
@@ -122,8 +123,8 @@ var test_data = [
 //  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  // { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  // { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] }
 ];
 
@@ -289,6 +290,10 @@ var post_test_survey = { // still just a test
   type: 'survey-text',
   preamble: '<h3>This is some text to appear on top.</h3> It can also be formatted.',
   questions: [{prompt: "This is the post-test survey. Just testing here!", rows: 10, columns: 100}],
+  on_finish: function() {
+    interaction_data = jsPsych.data.getInteractionData();
+    jsPsych.data.get().addToLast({interaction: interaction_data.json()});
+  }
 };
 
 timeline.push(post_test_survey)
@@ -323,6 +328,10 @@ jsPsych.init({
       timeline: timeline,
       preload_images: images, // preload all images in the test as defined at top
       // show_progress_bar: true,
+      // on_trial_finish: function() {
+      //   interaction_data = jsPsych.data.getInteractionData();
+      //   console.log(interaction_data.json());
+      // },
       on_finish: function() {
         jsPsych.data.displayData();
       }
