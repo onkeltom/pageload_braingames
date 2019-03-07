@@ -42,7 +42,6 @@ function normalRandomInRange(min, max)
 	{
 		val = normalRandom();
 	} while(val < min || val > max);
-
 	return val;
 }
 
@@ -75,3 +74,24 @@ function promiseGenerator_display({id, timeout}) {
     // console.log(id + " at " + timeout);
   })
 }
+
+function estBetaParams(mu, sigma) {
+    // console.log("b_mu = "+mu+", b_sigma = "+sigma);
+    variance = Math.pow(sigma, 2);
+    alpha =  ((1 - mu) / variance - 1 / mu) * Math.pow(mu,2);
+    beta = alpha * (1 / mu - 1);
+    return {
+        a: alpha, 
+        b: beta
+    };
+}
+
+function betaRandomInRange(min, max) {
+    var betaparams = estBetaParams(0.9, 0.1);
+    var random_num = jStat.beta.sample(betaparams.a, betaparams.b);
+    // console.log("random_number -> "+random_num);
+    var out = min + random_num*(max-min);
+    // console.log("out -> "+Math.round(out)+" (min: "+min+", max: "+max+")");
+    return Math.round(out);
+}
+
