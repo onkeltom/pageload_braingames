@@ -63,7 +63,7 @@ var qoe_option = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
  var evaluate = {
   type: 'survey-multi-choice',
-  questions: [{prompt: "<h3>How did you experience the loading of the last page?</h3>0 refers to the slowest experience, 10 refers to the fastest experience.", options: qoe_option, required: false, horizontal: true}, {prompt: "<br><br><h3>How many bags or hockey players did you find on the previous page?</h3>", options: bags_option, required: false, horizontal: true,}],
+  questions: [{prompt: "<b>How did you experience the loading of the last page?</b><p>0 refers to the slowest experience, 10 refers to the fastest experience.</p>", options: qoe_option, required: true, horizontal: true}, {prompt: "<b>How many football players or red bags did you find on the previous page?</b>", options: bags_option, required: true, horizontal: true,}],
 };
 
 // This variable is where you will define the test_data
@@ -78,7 +78,7 @@ var training_data = [
   { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
@@ -102,28 +102,28 @@ var training_data = [
 
 var test_data = [
   { data: {js_url: "static/js/news_450_900_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  // { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  // { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-//  { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-// { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-//  { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-//  { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-//  { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-//  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-//  { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-//  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-//  { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-//  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  // { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] }
 ];
 
@@ -241,7 +241,7 @@ var before_test_starts = {
       '<p>This is the end of the training.</p>' +
       // '<p>For your information, during the training, you received a total score of <span id=score></span> out of ' + training_data.length * 5000 + ' points.</p>' +
       '<p>During the test, you will now see ' +test_data.length+ ' page loads that you will have to rate similar to the training.</p>' +
-      'The study begins beyond this final screen, you will not be able to go backward from here.',
+      'The study begins directly after this screen.',
   ],
   show_clickable_nav: true,
   allow_keys: false,
@@ -287,8 +287,8 @@ timeline.push(test_block)
 
 var post_test_survey = { // still just a test
   type: 'survey-text',
-  preamble: '<h3>This is some text to appear on top.</h3> It can also be formatted.',
-  questions: [{prompt: "This is the post-test survey. Just testing here!", rows: 10, columns: 100}],
+  preamble: '<h3>Final question about page loading:</h3>',
+  questions: [{prompt: "What is for you the most important thing for a fast page loading experience? Please describe on what you focus most.", rows: 10, columns: 100}],
   on_finish: function() {
     interaction_data = jsPsych.data.getInteractionData();
     jsPsych.data.get().addToLast({interaction: interaction_data.json()});
@@ -332,6 +332,6 @@ jsPsych.init({
       //   console.log(interaction_data.json());
       // },
       on_finish: function() {
-        jsPsych.data.displayData();
+         // jsPsych.data.displayData();
       }
 });
