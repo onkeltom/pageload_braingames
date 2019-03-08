@@ -287,8 +287,8 @@ timeline.push(test_block)
 
 var post_test_survey = { // still just a test
   type: 'survey-text',
-  preamble: '<h3>Final question about page loading:</h3>',
-  questions: [{prompt: "What is for you the most important thing for a fast page loading experience? Please describe on what you focus most.", rows: 10, columns: 100}],
+  preamble: '<h3>One last question about page loading</h3>During the test, we asked you to rate the page load experience of different pages. At the end, we are interested in what you used to determine is a page load experience was fast or slow.',
+  questions: [{prompt: "What is for you the most important thing for a fast page load experience? Please describe on what you focus most.", rows: 10, columns: 100}],
   on_finish: function() {
     interaction_data = jsPsych.data.getInteractionData();
     jsPsych.data.get().addToLast({interaction: interaction_data.json()});
@@ -307,7 +307,7 @@ var debrief_block = {
     // "<br>You scored a total of <span id=totalscore></span> points during the test." +
     // "<br>That's a fantastic score.<br>Congratulation!</p>" +
     "<p>The goal of this test is to better understand what makes pages load fast for our users." +
-    "<br>With the results, we will be able to create an ever faster experience for Firefox Quantum." +
+    "<br>With the results, we will be able to a Web that will feel faster for everyone." +
     "Thank you for contributing!</p>" +
     "<p>Your Microworkers verification code is: <b>"+verification+"</b></p>" +
     "<p>Press any key to complete the experiment.</p>"
