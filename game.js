@@ -12,6 +12,15 @@ var interaction_data = '';
 
 var my_secret_key = '1c9f105664f47c290961f64ace2c879a6c6942e6d1935732ccca70c63803fbea';
 var urlvar = jsPsych.data.urlVariables();
+var user_agent_string = navigator.userAgent;
+
+function saveData(name, data){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'write_data.php'); // 'write_data.php' is the path to the php file described above.
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({filename: name, filedata: data}));
+}
+
 //console.log(urlvar.campaign);
 //console.log(urlvar.worker);
 //console.log(urlvar.randkey);
@@ -75,7 +84,7 @@ var training_data = [
 //  { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+//  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
 //  { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
@@ -92,7 +101,7 @@ var training_data = [
 //  { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
- { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+// { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
 //  { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] }
 ];
@@ -102,27 +111,27 @@ var training_data = [
 
 var test_data = [
   { data: {js_url: "static/js/news_450_900_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  //{ data: {js_url: "static/js/news_600_1200_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_750_1500_2250_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_750_1500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  //{ data: {js_url: "static/js/news_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
-  { data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  //{ data: {js_url: "static/js/news_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
+  //{ data: {js_url: "static/js/news_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/news_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/news.html"}, evaluate] },
   { data: {js_url: "static/js/agency_450_900_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  //{ data: {js_url: "static/js/agency_600_1200_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_750_1500_2250_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_750_1500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  //{ data: {js_url: "static/js/agency_1000_2000_3000_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_1200_1500_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_1200_1800_2400_3000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_1250_2500_3750_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
-  { data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  //{ data: {js_url: "static/js/agency_1600_2000_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
+  //{ data: {js_url: "static/js/agency_1600_2400_3200_4000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_2000_2500_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] },
   { data: {js_url: "static/js/agency_2000_3000_4000_5000.js" }, timeline: [{url: "static/html/agency_3col.html"}, evaluate] }
 ];
@@ -291,7 +300,7 @@ var post_test_survey = { // still just a test
   questions: [{prompt: "What is for you the most important thing for a fast page load experience? Please describe on what you focus most.", rows: 10, columns: 100}],
   on_finish: function() {
     interaction_data = jsPsych.data.getInteractionData();
-    jsPsych.data.get().addToLast({interaction: interaction_data.json()});
+    jsPsych.data.get().addToLast({interaction: interaction_data.json(), useragent: user_agent_string, campaign: urlvar.campaign, worker: urlvar.worker, randkey: urlvar.randkey, verificationcode: verification});
   }
 };
 
@@ -309,13 +318,14 @@ var debrief_block = {
     "<p>The goal of this test is to better understand what makes pages load fast for our users." +
     "<br>With the results, we will be able to a Web that will feel faster for everyone." +
     "Thank you for contributing!</p>" +
-    "<p>Your Microworkers verification code is: <b>"+verification+"</b></p>" +
-    "<p>Press any key to complete the experiment.</p>"
+    "<p>Your Microworkers verification code is: <b>"+verification+"</b></p>" + 
+    "<p>Please copy this code to Microworkers to receive your payment, afterwards you can close this window.</p>"
 
   },
   on_load: function(){
     // $('#totalscore').text(total_score);
-    jsPsych.data.addProperties({campaign: urlvar.campaign, worker: urlvar.worker, randkey: urlvar.randkey, verificationcode: verification});
+    
+    saveData(urlvar.campaign + "_" + urlvar.worker + "_experiment_data", jsPsych.data.get().json());
     // console.log(verification);
   },
 };
